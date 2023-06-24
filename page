@@ -1,0 +1,8 @@
+Two-factor authentication (2FA) is required for all accounts on the GitLab instance at code.videolan.org. There are plans to soften this requirement, for users who only wish to report a bug in particular: see the upstream GitLab ticket at ''<insert ticket URL here>''
+
+== Help, I'm blocked by this 2FA page, I don't know what 2FA is and I don't care, I don't have any 2FA device nor even a smartphone, I just want to start using GitLab! ==
+
+Follow this simple solution:
+* Install the <code>oathtool</code> package on your computer.
+* The 2FA page generates a key for you to use: copy-paste it from the text block on the right of the QR code, and save it into a private file on your computer, for example <code>~/code.v.o-2fa-key</code> Don't lose this key or let others access it, this will be what authenticates you.
+* Run the command <code>oathtool --totp -b - < ~/code.v.o-2fa-key</code> and enter the code it generates to register on the 2FA page, and then whenever you log in and get prompted for it.
